@@ -28,10 +28,11 @@ rosbuild_add_boost_directories()
 #rosbuild_link_boost(${PROJECT_NAME} thread)
 #rosbuild_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
+file(GLOB_RECURSE sot_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include" *.h)
 
 rosbuild_add_library(sot_fcl_distance_computation src/DistanceComputation.cpp 
-				     								src/conversions.cpp
-                                     			src/kdl_tools.cpp)
+                                                  src/conversions.cpp
+                                                  src/kdl_tools.cpp)
 
-rosbuild_add_executable(distance_query src/distance_query.cpp)
+rosbuild_add_executable(distance_query src/distance_query.cpp ${sot_INCLUDES})
 target_link_libraries(distance_query sot_fcl_distance_computation fcl)

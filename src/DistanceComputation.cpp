@@ -137,12 +137,12 @@ bool DistanceComputation::parseCollisionObjects(
 
                 boost::shared_ptr< ::urdf::Mesh> collisionGeometry = boost::dynamic_pointer_cast< ::urdf::Mesh> (link->collision->geometry);
 
-                shapes::Mesh *mesh = shapes::createMeshFromFilename(collisionGeometry->filename);
+                shapes::Mesh *mesh = shapes::createMeshFromResource(collisionGeometry->filename);
 
                 std::vector<fcl::Vec3f> vertices;
                 std::vector<fcl::Triangle> triangles;
 
-                for(unsigned int i=0; i < mesh->vertexCount; ++i){
+                for(unsigned int i=0; i < mesh->vertex_count; ++i){
                     fcl::Vec3f v(mesh->vertices[3*i]*collisionGeometry->scale.x,
                                  mesh->vertices[3*i + 1]*collisionGeometry->scale.y,
                                  mesh->vertices[3*i + 2]*collisionGeometry->scale.z);
@@ -150,7 +150,7 @@ bool DistanceComputation::parseCollisionObjects(
                     vertices.push_back(v);
                 }
 
-                for(unsigned int i=0; i< mesh->triangleCount; ++i){
+                for(unsigned int i=0; i< mesh->triangle_count; ++i){
                     fcl::Triangle t(mesh->triangles[3*i],
                                     mesh->triangles[3*i + 1],
                                     mesh->triangles[3*i + 2]);

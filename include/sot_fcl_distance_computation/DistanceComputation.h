@@ -6,7 +6,7 @@
 #include <kdl/tree.hpp>
 #include <kdl_parser/kdl_parser.hpp>
 #include <kdl/treefksolverpos_recursive.hpp>
-#include <urdf_model/model.h>
+#include <urdf/model.h>
 #include <tf/transform_broadcaster.h>
 
 
