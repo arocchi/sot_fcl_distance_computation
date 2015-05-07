@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package>
+  <name>sot_fcl_distance_computation</name>
+  <version>0.0.2</version>
+  <description>
+     sot_fcl_distance_computation
+  </description>
+  <maintainer email="alessio.rocchi@iit.it">Alessio Rocchi</maintainer>
+  <author>Karsten Knese</author>
+  <author email="alessio.rocchi@iit.it">Alessio Rocchi</author>
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>kdl_parser</build_depend>
+  <build_depend>urdf</build_depend>
+  <build_depend>geometric_shapes</build_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>kdl_parser</run_depend>
+  <run_depend>urdf</run_depend>
+  <run_depend>geometric_shapes</run_depend>
+  <run_depend>fcl</run_depend>
+
+</package>
+
+
