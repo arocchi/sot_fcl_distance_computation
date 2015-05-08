@@ -151,7 +151,9 @@ int main(int argc, char** argv) {
 	fcl::Vec3f relativeP2;
 
 	while (ros::ok()) {
+        ROS_INFO("looping");
 		fcl::DistanceResult result = distance_comp->minimum_distance(s1, s2, relativeP1, relativeP2);
+        ROS_INFO("minimum_distance computed");
 		if (!result.nearest_points[0].isZero()
 				&& !result.nearest_points[1].isZero()) {
 

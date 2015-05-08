@@ -27,8 +27,7 @@ INCLUDE_DIRECTORIES(include ${Boost_INCLUDE_DIRS} ${EIGEN3_INCLUDE_DIR}
 file(GLOB_RECURSE sot_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include" *.h)
 
 add_library(sot_fcl_distance_computation src/DistanceComputation.cpp
-                                                  src/conversions.cpp
-                                                  src/kdl_tools.cpp)
+                                                  src/conversions.cpp)
 catkin_package(
  INCLUDE_DIRS include
  LIBRARIES sot_fcl_distance_computation
@@ -43,7 +42,7 @@ target_link_libraries(distance_query sot_fcl_distance_computation
                                     ${orocos_kdl_LIBRARIES} ${ros_console_LIBRARIES}
                                     ${tf_LIBRARIES} ${urdf_LIBRARIES})
 
-install(TARGETS sot_fcl_distance_computation
+install(TARGETS sot_fcl_distance_computation distance_query
    ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
    LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
    RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

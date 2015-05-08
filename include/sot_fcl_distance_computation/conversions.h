@@ -93,18 +93,6 @@ namespace distance{
       return out;
   }
 
-  //Returns the sum of the square root diference of the homogeneous tranformations
-  //expressed as matrices. Mainly used for testing
-  template <class T1, class T2>
-  double differnce(const T1 &t1, const T2 &t2){
-    //Only perfrom conversion if the two types are different
-    T1 t2converted;
-  //  if(typeid(T1) != typeid(T2)){
-      convert(t2, t2converted);
-      return squared_difference(t1, t2converted);
- //   }
-  }
-
   //Conver a 3d homogeneous matrix into 2d.
   /// @todo can this be done copying needed values?
   void convert(const eMatrixHom &in, eMatrixHom2d &out);
